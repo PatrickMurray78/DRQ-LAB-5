@@ -1,15 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const port = 3000;
+const path = require('path');
 
 app.get('/', (req, res) => {
   res.send('Welcome to Data Representation & Querying!');
-})
+});
 
 app.get('/hello/:name', (req, res) => {
     console.log(req.params.name);
     res.send('Hello ' + req.params.name);
-})
+});
 
 app.get('/api/movies', (req, res) => {
     const mymovies = [
@@ -31,6 +32,10 @@ app.get('/api/movies', (req, res) => {
     res.json({movies:mymovies});
 })
 
+app.get('/test', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+});
+
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+  console.log(`Example app listening at http://localhost:${port}`);
+});
