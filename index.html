@@ -1,6 +1,9 @@
 <html>
     <body>
+        <!-- This web page contains two forms, both take in the users first
+             and last name but one uses the Get method and the other Post method-->
         <h1>My Web Page</h1>
+        <!-- The Get Method carries the request parameter appened in URL string -->
         <h3>Get Method</h3>
         <form action="/name" method="get">
             <label for="fname">First name:</label>
@@ -10,6 +13,7 @@
             <input type="submit" value="Submit">
         </form>
 
+        <!-- The Post Method carries the request parameter in message body - More Secure -->
         <h3>Post Method</h3>
         <form action="/name" method="post">
             <label for="fname">First name:</label>
